@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  margin: 0 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wallet{
+    background-color: #d0c9ff;
+    padding: 7px;
+    border-radius: 50%;
+    color: #6C5CE7;
+}
+
+.heading{
+    display: flex;
+    flex-direction: column;
+}
+
+.toggle{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 4px;
+    border: 1px solid #a9a9a9;
+    background-color: white;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.hero{
+    margin: 1% 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.addExp{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 10px;
+    /* background-color: coral; */
+    border: 1px solid #a9a9a9;
+    border-radius: 15px;
+    width: 85%;
+    min-height: 150px;
+}
+
+.addExp p{
+    color: #a9a9a9;
+    font-size: small;
+}
+
+.newExp{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.newExp button{
+    color: white;
+    background-color: #6C5CE7;
+    border: 2px solid #6C5CE7;
+    border-radius: 10px;
+    padding: 8px 4px;
+    transition: transform 0.3s ease;
+}
+
+.newExp button:active{
+    transform: scale(1.1);
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input label{
+    font-weight: bold;
+}
+
+.input input{
+    border: 1px solid #a9a9a9;
+    border-radius: 10px;
+    padding: 5px;
+    width: 200px;
+}
+
+.input select {
+    border: 1px solid #a9a9a9;
+    border-radius: 10px;
+    padding: 5px;
+    width: 200px;
+}
+
+.total{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    background-color: #e4e1fb;
+    border: 1px solid #a9a9a9;
+    border-radius: 15px;
+    width: 15%;
+    min-height: 130px;
+}
+
+.total h1{
+    color: #6C5CE7;
+}
+
+.allExp{
+    border: 1px solid #a9a9a9;
+    border-radius: 15px;
+    margin: 1% 3%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ops{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter, .sort{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter select, .sort select{
+    border: 1px solid #a9a9a9;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100px;
+}
+
+.sort button{
+    border: 1px solid #E17055;
+    background-color: white;
+    color: #E17055;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.sort button:active{
+    transform: scale(1.1);
+    color: white;
+    background-color: #E17055;
+}
+
+.allExp table{
+    border: 1px solid #a9a9a9;
+    text-align: left;
+    border-radius: 10px !important;
+
+     /* 1. Change collapse to separate */
+    border-collapse: separate; 
+    border-spacing: 0; 
+    
+    /* 2. Enable rounding */
+    border-radius: 10px; 
+    overflow: hidden; /* This clips the sharp corners of the cells inside */
+    margin: 0 3%;
+}
+
+.allExp table thead{
+    background-color: #F1F3F6;
+    color: #767676;
+    padding: 5px;
+}
+
+th, td{
+    font-weight: normal !important;
+    padding: 10px;
+}
+
+td{
+    font-size: 14px;
+    border-bottom: 1px solid #a9a9a9;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.delBtn{
+    color: #E17055;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #E17055;
+    padding: 8px;
+}
+
+.delBtn:active {
+    color: white;
+    background-color: #E17055;
+}
+
+@media (max-width: 992px) {
+    .newExp {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .input input, .input select {
+        width: 150px;
+    }
+
+    .allExp{
+        margin-top: 20px;
+    }
+
+    .addExp{
+        gap: 10px;
+        width: 80%;
+    }
+
+    .newExp button {
+        margin-top: 5px;
+    }
+
+    .total {
+        width: 20%;
+    }
+
+    .ops{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .left {
+        max-width: 350px;
+    }
+    .left p{
+        font-size: 13px;
+    }
+    .left h1{
+        font-size: 20px;
+    }
+
+    .input input{
+        width: 120px;
+    }
+
+    .input select {
+        width: 140px;
+    }
+
+    .input label{
+        font-size: 15px;
+        font-weight: normal;
+        margin-top: 5px;
+    }
+
+    .addExp{
+        width: 97%;
+    }
+
+    .newExp {
+        gap: 10px;
+    }
+
+    .total {
+        width: 97%;
+    }
+
+    .filter select, .sort select{
+    width: fit-content;
+    }
+
+    .filter label, .sort label{
+        font-size: 14px;
+    }
+
+    .allExp table{
+        margin: 0 2%;
+    }
+
+    .hero{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}

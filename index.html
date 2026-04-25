@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="left">
+        <i class="fa-solid fa-wallet fa-2x wallet"></i>
+        <div class="heading">
+          <h1>Expense Tracker</h1>
+          <p>Track your daily expenses and manage your budget</p>
+        </div>
+      </div>
+
+      <div class="right">
+        <button id="themeToggle" class="toggle" onclick="toggleTheme()">
+          <img
+            id="img"
+            width="28"
+            height="28"
+            src="https://img.icons8.com/external-linear-outline-icons-papa-vector/78/external-Light-Mode-interface-linear-outline-icons-papa-vector.png"
+            alt="external-Light-Mode-interface-linear-outline-icons-papa-vector"
+          />
+          <span id="modeText">Light Mode</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="addExp">
+        <h3>Add New Expense</h3>
+
+        <div class="newExp">
+          <div class="input">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" required placeholder="Enter amount" />
+          </div>
+
+          <div class="input">
+            <label for="description">Description</label>
+            <input
+              type="text"
+              id="description"
+              required
+              placeholder="Enter description"
+            />
+          </div>
+
+          <div class="input">
+            <label for="category">Category</label>
+            <select name="category" id="category" required>
+              <option value="" selected disabled>Select Category</option>
+              <option value="bills">Bills</option>
+              <option value="food">Food</option>
+              <option value="travel">Travel</option>
+              <option value="shopping">Shopping</option>
+            </select>
+          </div>
+
+          <button type="submit" onclick="addExpense()">+ Add Expense</button>
+        </div>
+        <p>All fields are required</p>
+      </div>
+      <div class="total" id="total">
+        <i class="fa-solid fa-wallet wallet"></i>
+        <h4>Total Spent</h4>
+        <h1 id="totalAmount"></h1>
+        <p id="totalItems"></p>
+      </div>
+    </div>
+
+    <!-- All Expenses -->
+    <div class="allExp">
+      <h3>All Expenses</h3>
+      <div class="ops">
+        <div class="filter">
+          <label for="filter">Filter by Category</label>
+          <select name="filter" id="filter" onchange="renderExpenses()">
+            <option value="all">All</option>
+            <option value="bills">Bills</option>
+            <option value="food">Food</option>
+            <option value="travel">Travel</option>
+            <option value="shopping">Shopping</option>
+          </select>
+        </div>
+
+        <div class="sort">
+          <label for="sort">Sort by</label>
+          <select name="sort" id="sort" onchange="renderExpenses()">
+            <option value="latest">Latest First</option>
+            <option value="oldest">Oldest First</option>
+          </select>
+          <button type="submit" onclick="clearAllExpenses()">
+            <i class="fa-regular fa-trash-can"></i> <span>Clear All</span>
+          </button>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>DESCRIPTION</th>
+            <th>CATEGORY</th>
+            <th>AMOUNT</th>
+            <th>DATE</th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody id="expenseTableBody">
+          
+        </tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
